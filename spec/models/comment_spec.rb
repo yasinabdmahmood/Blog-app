@@ -9,7 +9,7 @@ RSpec.describe Comment, type: :model do
   end
 
   it 'test update_comment_counter' do
-    @Comment.update_comment_counter
+    @comment.update_comment_counter
     expect(@post.CommnetsCounter).to eq 1
   end
 end
