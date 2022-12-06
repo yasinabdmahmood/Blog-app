@@ -58,7 +58,8 @@ group :development do
   gem 'web-console'
 
   group :development, :test do
-    gem 'rspec-rails'
+    gem 'rails-controller-testing'
+    gem 'rspec-rails', '~> 6.0.0'
   end
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
