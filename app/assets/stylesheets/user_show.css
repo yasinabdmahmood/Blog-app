@@ -1,43 +1,47 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .user {
   box-sizing: border-box;
   padding: 2rem;
   display: flex;
   column-gap: 3rem;
 }
+
 .face-container {
-    align-items: stretch;
+  align-items: stretch;
 }
+
 .face {
   border-radius: 1rem;
-  width : 200px;
+  width: 200px;
   height: 200px;
 }
+
 .details {
-    padding: 2rem;
-    column-gap: 2rem;
-    display: flex;
-    border: 1px solid black;
-    border-radius: 1rem;
+  padding: 2rem;
+  column-gap: 2rem;
+  display: flex;
+  border: 1px solid black;
+  border-radius: 1rem;
 }
 
 .details h3 {
-    margin: 0%;
-    padding: 0%;
-    align-self: flex-end;
+  margin: 0%;
+  padding: 0%;
+  align-self: flex-end;
 }
 
 .bio {
-    border: 1px black solid;
-    border-radius: 1rem;
-    padding: 1rem;
-    margin: 1rem;
-    width: 600px
-  }
+  border: 1px black solid;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  width: 600px;
+}
 
 .post {
   border: 1px black solid;
@@ -46,15 +50,18 @@ body {
   margin: 1rem;
   width: 600px;
 }
+
 .post div {
-    display: flex;
-    justify-content: flex-end;
-    column-gap: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 2rem;
 }
+
 .btn {
   box-sizing: border-box;
   padding: 2rem;
 }
+
 .btn button {
   padding: 0.5rem;
 }
