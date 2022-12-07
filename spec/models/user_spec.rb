@@ -6,11 +6,11 @@ RSpec.describe User, type: :model do
   before :all do
     @user = User.new(Name: 'yasin', Photo: 'https://avatars.githubusercontent.com/u/9&v=4',
                      Bio: 'Web developer from Iraq', PostsCounter: 0)
-    @post1 = Post.create(author: @user, Title: 't1', Text: 'this post is for testing purpuse', CommnetsCounter: 0,
+    @post1 = Post.create(author: @user, Title: 't1', Text: 'this post is for testing purpuse', CommentsCounter: 0,
                          LikesCounter: 0)
-    @post2 = Post.create(author: @user, Title: 't1', Text: 'this post is for testing purpuse', CommnetsCounter: 0,
+    @post2 = Post.create(author: @user, Title: 't1', Text: 'this post is for testing purpuse', CommentsCounter: 0,
                          LikesCounter: 0)
-    @post3 = Post.create(author: @user, Title: 't1', Text: 'this post is for testing purpuse', CommnetsCounter: 0,
+    @post3 = Post.create(author: @user, Title: 't1', Text: 'this post is for testing purpuse', CommentsCounter: 0,
                          LikesCounter: 0)
   end
 

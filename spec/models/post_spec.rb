@@ -1,13 +1,13 @@
 require 'rails_helper'
 RSpec.describe Post, type: :model do
-  subject { Post.new(Title: 'Hello', Text: 'This is my first post', CommnetsCounter: 8, LikesCounter: 15) }
+  subject { Post.new(Title: 'Hello', Text: 'This is my first post', CommentsCounter: 8, LikesCounter: 15) }
   before { subject.save }
 
   before :all do
     @user = User.new(Name: 'yasin', Photo: 'https://avatars.githubusercontent.com/u/9&v=4',
                      Bio: 'Web developer from Iraq', PostsCounter: 0)
     @post = Post.new(author: @user, Title: 'My first post', Text: 'this post is for testing purpuse',
-                     CommnetsCounter: 0, LikesCounter: 0)
+                     CommentsCounter: 0, LikesCounter: 0)
     @comment1 = Comment.create(Text: 'c1', author: @user, post: @post)
     @comment2 = Comment.create(Text: 'c2', author: @user, post: @post)
     @comment3 = Comment.create(Text: 'c3', author: @user, post: @post)
@@ -36,12 +36,12 @@ RSpec.describe Post, type: :model do
   end
 
   it 'CommentsCounter must be an integer' do
-    subject.CommnetsCounter = 'x'
+    subject.CommentsCounter = 'x'
     expect(subject).to_not be_valid
   end
 
   it 'CommentsCounter must be greater than or equal to zero.' do
-    subject.CommnetsCounter = -7
+    subject.CommentsCounter = -7
     expect(subject).to_not be_valid
   end
 
