@@ -1,1 +1,39 @@
+<%= stylesheet_link_tag "post_index.css" %>
 <h1>Display All the posts for a specific user</h1>
+<div class='user'>
+        <div class="face-container">
+          <img 
+          class="face" 
+          src=<%= @user.Photo %>
+          alt="face" />
+        </div>
+        <div class="details">
+            <h1><%= @user.Name %></h1>
+            <h3>Number of posts : <%= @user.PostsCounter %></h3>
+        </div>
+    </div>
+    <% @posts.each do |post| %>
+      <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
+      <div>
+          <div class="post">
+            <h3><%= post.Title %></h3>
+            <p><%= post.Text %></p>
+            
+          </div>
+          
+            <div class="comment-details">
+            <% post.retrieve_recent_comments.each do |comment| %>
+              <p><%= comment.author.Name %>: <%= comment.Text %></p>
+            <% end %>
+            </div>
+          
+        </div>
+      </a>
+        
+    <% end %>
+
+    <div class="btn">
+        <button>
+            Pagination
+        </button>
+    </div>

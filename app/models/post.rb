@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :likes
 
   validates :Title, presence: true, length: { in: 1..250 }
-  validates :CommnetsCounter, comparison: { greater_than_or_equal_to: 0 }, numericality: { only_integer: true }
+  validates :CommentsCounter, comparison: { greater_than_or_equal_to: 0 }, numericality: { only_integer: true }
   validates :LikesCounter, comparison: { greater_than_or_equal_to: 0 }, numericality: { only_integer: true }
 
   def update_post_counter

@@ -1,1 +1,18 @@
+<%= stylesheet_link_tag "post_show.css" %>
 <h1>Display post by id  for a given user</h1>
+<div class="post">
+    <div class="header">
+        <h3 ><%= @post.Title %> by <%= @post.author.Name %></h3>
+        <div class="statistics">
+            <span>Comments: <%= @post.CommentsCounter %></span>
+            <span>Likes: <%= @post.LikesCounter %></span>
+        </div>
+    </div>
+    <p><%= @post.Text %></p>
+    
+</div>
+<div class="comment-details">
+    <% @post.comments.each do |comment| %>
+      <p><%= comment.author.Name %>: <%= comment.Text %></p>
+    <% end %>
+</div>
