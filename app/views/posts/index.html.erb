@@ -22,7 +22,7 @@
           </div>
           
             <div class="comment-details">
-            <% post.comments.each do |comment| %>
+            <% post.retrieve_recent_comments.each do |comment| %>
               <p><%= comment.author.Name %>: <%= comment.Text %></p>
             <% end %>
             </div>
