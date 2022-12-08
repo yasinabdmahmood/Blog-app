@@ -13,7 +13,8 @@
         </div>
     </div>
     <% @posts.each do |post| %>
-        <div>
+      <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
+      <div>
           <div class="post">
             <h3><%= post.Title %></h3>
             <p><%= post.Text %></p>
@@ -27,6 +28,8 @@
             </div>
           
         </div>
+      </a>
+        
     <% end %>
 
     <div class="btn">

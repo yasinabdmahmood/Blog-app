@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post {
+  border: 1px black solid;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 0px;
+  width: 600px;
+}
+.header {
+  display: flex;
+  justify-content: space-between !important;
+}
+.statistics {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+.comment-details {
+  border: 1px black solid;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 0px;
+  width: 600px;
+}
+
+.btn {
+  box-sizing: border-box;
+  padding: 2rem;
+}
+.btn button {
+  padding: 0.5rem;
+}
