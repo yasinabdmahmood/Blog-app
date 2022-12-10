@@ -20,4 +20,7 @@
 <button>
     <%= link_to "Add New Comment", new_comment_path(@post.author.id) %>
 </button>
+<%= form_with  url: create_like_path, method: :post, local: true do |f| %>
+    <%= f.submit "Add new Like" %>
+<% end %>
 </div>

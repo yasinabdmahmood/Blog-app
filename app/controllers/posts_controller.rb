@@ -14,6 +14,8 @@ class PostsController < ApplicationController
   end
   def create
     @post = Post.new(post_params)
+    current_user.PostsCounter +=1
+    current_user.save
     @post.author = current_user
     @post.CommentsCounter = 0
     @post.LikesCounter = 0

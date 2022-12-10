@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/users/:id/posts/:post_id/new_comment' , to: 'comments#new', as:'new_comment'
   get '/users/:id/posts/:post_id' , to: 'posts#show'
   post '/users/:id/posts/:post_id/create' , to: 'comments#create', as: 'create_comment'
+  post '/users/:id/posts/:post_id/create_like' , to: 'likes#create', as: 'create_like'
   
 end
