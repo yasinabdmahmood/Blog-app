@@ -10,11 +10,11 @@ class PostsController < ApplicationController
 
   def new
     @new_post = Post.new
-    
   end
+
   def create
     @post = Post.new(post_params)
-    current_user.PostsCounter +=1
+    current_user.PostsCounter += 1
     current_user.save
     @post.author = current_user
     @post.CommentsCounter = 0
@@ -31,5 +31,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:new_post).permit(:Title, :Text)
   end
-
 end
