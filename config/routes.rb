@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "users#index"
+  root to: "users#index", as: 'users'
   get '/users/:id' , to: 'users#show'
   get '/users/:id/posts' , to: 'posts#index', as: 'posts'
   get '/users/:id/posts/new', to: 'posts#new', as: 'new_post'
