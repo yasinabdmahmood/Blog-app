@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'User index page', type: :feature do
   before(:example) do
-    @subject1 = User.create(Name: 'Alan Luqman', Photo: 'user_picture',PostsCounter: 0, Bio: 'Teacher from UK.')
-    @subject2 = User.create(Name: 'Nich', Photo: 'user_picture',PostsCounter: 0, Bio: 'Teacher from Negiria.')
+    @subject1 = User.create(Name: 'Alan Luqman', Photo: 'user_picture', PostsCounter: 0, Bio: 'Teacher from UK.')
+    @subject2 = User.create(Name: 'Nich', Photo: 'user_picture', PostsCounter: 0, Bio: 'Teacher from Negiria.')
 
     visit users_path
   end
