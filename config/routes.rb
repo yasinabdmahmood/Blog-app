@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: "users#index", as: 'users'
-  get '/users/:id' , to: 'users#show'
+  get '/users/:id' , to: 'users#show', as: 'user'
   get '/users/:id/posts' , to: 'posts#index', as: 'posts'
   get '/users/:id/posts/new', to: 'posts#new', as: 'new_post'
   post '/users/:id/posts/create', to: 'posts#create', as: 'create_post'  
