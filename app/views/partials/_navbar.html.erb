@@ -1,0 +1,5 @@
+<div class='navbar'>
+<h2 class='current-user'><%=current_user.Name %></h2>
+<button class="edit-password"><a href="/users/edit">Edit password</a></button>
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+</div>
