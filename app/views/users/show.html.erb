@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag "user_show.css" %>
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
 <h1>Display a user by id</h1>
 
 <div class='user'>

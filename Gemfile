@@ -75,3 +75,4 @@ group :test do
 end
 
 gem 'ffi', github: 'ffi/ffi', submodules: true
+gem 'devise'
