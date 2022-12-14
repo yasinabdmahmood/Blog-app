@@ -1,0 +1,24 @@
+.navbar {
+    background: rgb(58,137,138);
+    background: linear-gradient(90deg, rgba(58,137,138,1) 5%, rgba(176,189,150,1) 76%);
+    position: absolute;
+    top: 0%;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0rem 1rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    column-gap: 1rem;
+}
+.navbar .button_to button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+.navbar .current-user {
+ padding: 0%;
+}
+.navbar .edit-password {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
