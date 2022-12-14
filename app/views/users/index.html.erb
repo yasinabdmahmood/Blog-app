@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag "user_index.css" %>
 <h1>Display All the users</h1>
+<%= render partial: '/partials/navbar' %>
 <% @users.each do |user| %>
     <a href="/users/<%= user.id %>">
     <div class='user'>
