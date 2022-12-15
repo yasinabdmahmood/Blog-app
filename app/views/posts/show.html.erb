@@ -25,5 +25,6 @@
 <%= form_with  url: create_like_path, method: :post, local: true do |f| %>
     <%= f.submit "Add new Like" %>
 <% end %>
+<%= link_to "Delete post", delete_post_path(id: @post.author.id, post_id: @post.id), method: :post %>
 </div>
 
