@@ -20,9 +20,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    Comment.find_by(id: params[:comment_id]).destroy
-    current_comments_counter=Post.find_by(id: params[:post_id])
-    current_comments_counter.CommentsCounter-=1
+    current_comment = Comment.find_by(id: params[:comment_id])
+    authorize! :destroy, current_comment
+    current_comment.destroy
+    current_comments_counter = Post.find_by(id: params[:post_id])
+    current_comments_counter.CommentsCounter -= 1
     current_comments_counter.save
     redirect_to user_post_path(id: params[:id], post_id: params[:post_id])
   end
