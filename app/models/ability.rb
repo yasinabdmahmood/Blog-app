@@ -2,10 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    
-
-    # Define abilities for the user here. For example:
-    user ||= User.new # guest user (not logged in)
+    user ||= User.new
     if user.role == 'admin'
       can :manage, :all
     else
@@ -20,15 +17,6 @@ class Ability
         comment.author == user
       end
       can :destroy, Like do |like|
-        like.author == user
-      end
-      can :update, Post do |post|
-        post.author == user
-      end
-      can :update, Comment do |comment|
-        comment.author == user
-      end
-      can :update, Like do |like|
         like.author == user
       end
     end

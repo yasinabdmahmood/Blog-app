@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
-  before_action:set_name, only: %[show update destroy]
+  before_action :set_name, only: %(show update destroy)
   def index
     @user = User.includes(:posts).find_by(id: params[:id])
   end
- 
+
   def show
     @post = Post.find_by(id: params[:post_id])
   end
@@ -31,21 +31,17 @@ class PostsController < ApplicationController
     current_post = Post.find_by(id: params[:post_id])
 
     # delete all the comments for the post
-    current_post.comments.each do |comment|
-      comment.destroy
-    end
+    current_post.comments.each(&:destroy)
     # delete all the likes for the post
-    current_post.likes.each do |like|
-      like.destroy
-    end
+    current_post.likes.each(&:destroy)
 
     # delete the post itself
     current_post.destroy
 
     # decrease the number of posts counter for the owner of the deleted post by one
     user_post_counter = User.find_by(id: params[:id])
-    user_post_counter.PostsCounter-=1
-    user_post_counter.save 
+    user_post_counter.PostsCounter -= 1
+    user_post_counter.save
 
     # redirect to the page that shows all the posts for the user of deleted post
     redirect_to posts_path(id: params[:id])
