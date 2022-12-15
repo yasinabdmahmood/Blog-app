@@ -75,4 +75,5 @@ group :test do
 end
 
 gem 'devise'
+gem 'cancancan'
 gem 'ffi', github: 'ffi/ffi', submodules: true
