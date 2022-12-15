@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  
   def new
     @new_comment = Comment.new
   end

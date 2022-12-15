@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
+  before_action:set_name, only: %[show update destroy]
   def index
     @user = User.includes(:posts).find_by(id: params[:id])
   end
-
+ 
   def show
     @post = Post.find_by(id: params[:post_id])
   end
