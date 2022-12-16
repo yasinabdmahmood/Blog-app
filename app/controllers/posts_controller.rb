@@ -5,6 +5,16 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:post_id])
+    respond_to do |format|
+      format.html
+      format.json do
+        if current_user.id == params[:id].to_i
+          render json: @post.comments
+        else
+          render html: "You are not authorized to see someone else's data"
+        end
+      end
+    end
   end
 
   def new
