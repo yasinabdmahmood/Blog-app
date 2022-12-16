@@ -15,6 +15,10 @@
 <div class="comment-details">
     <% @post.comments.each do |comment| %>
       <p><%= comment.author.Name %>: <%= comment.Text %></p>
+      <% if can? :destroy, comment %>
+        <%= link_to "Delete", delete_comment_path(id: @post.author.id, post_id: @post.id, comment_id: comment.id), method: :post %>
+      <% end %>
+      
     <% end %>
 </div>
 <div>
@@ -24,5 +28,11 @@
 <%= form_with  url: create_like_path, method: :post, local: true do |f| %>
     <%= f.submit "Add new Like" %>
 <% end %>
+
+<% if can? :destroy, @post %>
+ <%= link_to "Delete", delete_post_path(id: @post.author.id, post_id: @post.id), method: :delete %>
+<% end %>   
+  
+
 </div>
 

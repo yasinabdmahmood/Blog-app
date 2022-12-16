@@ -1,7 +1,7 @@
 .navbar {
   background: rgb(58, 137, 138);
   background: linear-gradient(90deg, rgba(58, 137, 138, 1) 5%, rgba(176, 189, 150, 1) 76%);
-  position: absolute;
+  position: fixed;
   top: 0%;
   box-sizing: border-box;
   width: 100%;

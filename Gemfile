@@ -74,5 +74,6 @@ group :test do
   gem 'capybara'
 end
 
+gem 'cancancan'
 gem 'devise'
 gem 'ffi', github: 'ffi/ffi', submodules: true

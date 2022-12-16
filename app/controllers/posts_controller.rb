@@ -25,6 +25,28 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    # grap the post to be deleted
+    current_post = Post.find_by(id: params[:post_id])
+    authorize! :destroy, current_post
+
+    # delete all the comments for the post
+    current_post.comments.each(&:destroy)
+    # delete all the likes for the post
+    current_post.likes.each(&:destroy)
+
+    # delete the post itself
+    current_post.destroy
+
+    # decrease the number of posts counter for the owner of the deleted post by one
+    user_post_counter = User.find_by(id: params[:id])
+    user_post_counter.PostsCounter -= 1
+    user_post_counter.save
+
+    # redirect to the page that shows all the posts for the user of deleted post
+    redirect_to posts_path(id: params[:id])
+  end
+
   private
 
   def post_params
