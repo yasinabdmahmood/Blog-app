@@ -97,6 +97,7 @@ To run tests, run the following command:
 
 - GitHub: [@yasinabdmahmood](https://github.com/yasinabdmahmood)
 - LinkedIn: [yaseen Abd alwahid](https://www.linkedin.com/in/yaseen-abdalwahid/)
+- GitLab: [YASEEN ABD ALWAHID](https://gitlab.com/yasinabdmahmood)
 
 <!-- FUTURE FEATURES -->
 
